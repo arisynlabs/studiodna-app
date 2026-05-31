@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio DNA™ — Reverse Engineer Any Vocal Chain | Coming Soon</title>
+<meta name="description" content="Studio DNA by Arisyn reverse engineers the vocal chain of any song or session — compression, reverb, EQ, effects, tuning, mix signature. Coming soon.">
+<meta property="og:title" content="Studio DNA™ — Reverse Engineer Any Mix">
+<meta property="og:description" content="The production intelligence layer. Drop a song, extract the studio blueprint. Powered by Arisyn.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://studiodna.app/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at 40% 50%,#050a14 0%,#000 65%);z-index:-1}
+.label{color:#38bdf8;font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:32px;opacity:.7}
+h1{font-size:clamp(48px,10vw,96px);font-weight:800;letter-spacing:-3px;line-height:.95;margin-bottom:20px}
+h1 em{color:#38bdf8;font-style:normal}
+.sub{font-size:clamp(15px,2.5vw,18px);color:#888;max-width:520px;margin:0 auto 48px;line-height:1.65}
+.sub strong{color:#ccc}
+.vis{display:flex;gap:4px;align-items:center;justify-content:center;margin:0 auto 44px;height:40px}
+.band{width:24px;border-radius:2px 2px 0 0;animation:eq 1.4s ease-in-out infinite alternate}
+.band:nth-child(1){height:30%;background:#38bdf8;animation-delay:0s}
+.band:nth-child(2){height:60%;background:#0ea5e9;animation-delay:.1s}
+.band:nth-child(3){height:90%;background:#38bdf8;animation-delay:.2s}
+.band:nth-child(4){height:45%;background:#0ea5e9;animation-delay:.3s}
+.band:nth-child(5){height:75%;background:#38bdf8;animation-delay:.15s}
+.band:nth-child(6){height:55%;background:#0ea5e9;animation-delay:.25s}
+.band:nth-child(7){height:35%;background:#38bdf8;animation-delay:.35s}
+.band:nth-child(8){height:80%;background:#0ea5e9;animation-delay:.05s}
+@keyframes eq{to{height:15%}}
+.countdown{display:flex;gap:20px;justify-content:center;margin-bottom:52px;flex-wrap:wrap}
+.unit{display:flex;flex-direction:column;align-items:center;gap:6px}
+.num{font-size:clamp(30px,6vw,52px);font-weight:700;color:#38bdf8;font-variant-numeric:tabular-nums;min-width:64px;background:#020d18;border:1px solid #0c2a3a;border-radius:6px;padding:12px 16px;line-height:1}
+.lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#555}
+.sep{font-size:36px;color:#0c2a3a;align-self:center;padding-bottom:16px}
+.notify{display:flex;gap:0;max-width:420px;margin:0 auto 16px;width:100%}
+.notify input{flex:1;padding:14px 18px;background:#020d18;border:1px solid #0c2a3a;border-right:none;border-radius:4px 0 0 4px;color:#fff;font-size:14px;outline:none}
+.notify input::placeholder{color:#333}
+.notify input:focus{border-color:#38bdf8}
+.notify button{padding:14px 22px;background:#38bdf8;color:#000;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:0 4px 4px 0;cursor:pointer;white-space:nowrap}
+.notify button:hover{background:#7dd3fc}
+#msg{font-size:12px;color:#38bdf8;margin-bottom:40px;min-height:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:580px;margin:0 auto 44px}
+.tag{background:#020d18;border:1px solid #0c2a3a;padding:7px 14px;border-radius:20px;font-size:11px;color:#777;letter-spacing:.5px}
+.tag strong{color:#38bdf8}
+.foot{font-size:11px;color:#333;letter-spacing:2px;text-transform:uppercase}
+.foot a{color:#38bdf8;text-decoration:none;opacity:.6}
+.foot a:hover{opacity:1}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<p class="label">By Arisyn &mdash; Vocal Intelligence</p>
+<h1>Studio<br><em>DNA</em>™</h1>
+<p class="sub">The production intelligence layer. Drop any song or session — extract the <strong>full studio blueprint</strong>: compression chain, reverb signature, EQ curve, effects stack, mix fingerprint.</p>
+<div class="vis">
+<div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div>
+<div class="band"></div><div class="band"></div><div class="band"></div><div class="band"></div>
+</div>
+<div class="countdown">
+<div class="unit"><div class="num" id="d">00</div><div class="lbl">Days</div></div>
+<div class="sep">:</div>
+<div class="unit"><div class="num" id="h">00</div><div class="lbl">Hours</div></div>
+<div class="sep">:</div>
+<div class="unit"><div class="num" id="m">00</div><div class="lbl">Mins</div></div>
+<div class="sep">:</div>
+<div class="unit"><div class="num" id="s">00</div><div class="lbl">Secs</div></div>
+</div>
+<div class="notify">
+<input type="email" id="em" placeholder="your@email.com">
+<button onclick="go()">Notify Me</button>
+</div>
+<div id="msg"></div>
+<div class="tags">
+<span class="tag"><strong>Vocal Chain</strong> Reverse Engineering</span>
+<span class="tag"><strong>Compression</strong> Detection</span>
+<span class="tag"><strong>EQ</strong> Blueprint</span>
+<span class="tag"><strong>Reverb</strong> Signature</span>
+<span class="tag"><strong>Mix</strong> Fingerprint</span>
+<span class="tag"><strong>Effects</strong> Stack</span>
+<span class="tag"><strong>Session</strong> Intelligence</span>
+<span class="tag"><strong>Artist</strong> Sound Matching</span>
+</div>
+<p class="foot">Powered by <a href="https://arisyn.ai">Arisyn</a> &mdash; <a href="https://vocaldna.app">Vocal DNA</a> &mdash; <a href="https://songdna.app">Song DNA</a></p>
+<script>
+var t=new Date('2026-09-01T00:00:00Z');
+function tick(){var n=new Date(),d=t-n;if(d<0)d=0;
+document.getElementById('d').textContent=String(Math.floor(d/864e5)).padStart(2,'0');
+document.getElementById('h').textContent=String(Math.floor(d%864e5/36e5)).padStart(2,'0');
+document.getElementById('m').textContent=String(Math.floor(d%36e5/6e4)).padStart(2,'0');
+document.getElementById('s').textContent=String(Math.floor(d%6e4/1e3)).padStart(2,'0');}
+tick();setInterval(tick,1000);
+function go(){var e=document.getElementById('em').value;
+if(!e||!e.includes('@')){document.getElementById('msg').textContent='Enter a valid email.';return;}
+document.getElementById('msg').textContent="You're on the list. Studio DNA drops soon.";document.getElementById('em').value='';}
+</script>
+</body>
+</html>
